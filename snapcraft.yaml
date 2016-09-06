@@ -8,6 +8,7 @@ confinement: strict
 apps:
   runc:
     command: runc
+    plugs: [network]
 
 parts:
   runc:
