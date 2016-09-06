@@ -1,0 +1,16 @@
+name: runc
+version: 1.0.0-rc1
+summary: runc container cli tools
+description: |
+  runc is a CLI tool for spawning and running containers according to the OCI specification.
+confinement: strict
+
+apps:
+  runc:
+    command: runc
+
+parts:
+  runc:
+    source: .
+    plugin: make
+    make-parameters: ["BUILDTAGS='seccomp apparmor'"]
